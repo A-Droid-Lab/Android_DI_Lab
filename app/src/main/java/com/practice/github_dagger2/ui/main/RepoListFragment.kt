@@ -60,7 +60,7 @@ class RepoListFragment : BaseFragment<RepoListViewModel, FragmentRepoListBinding
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        mTwoPane = activity?.findViewById<FrameLayout>(R.id.detail_activity_container) != null
+        mTwoPane = activity?.findViewById<FrameLayout>(R.id.detail_container) != null
 
         username?.let {
             viewModel.getRepoList(username!!).observe(viewLifecycleOwner, Observer {
@@ -76,7 +76,7 @@ class RepoListFragment : BaseFragment<RepoListViewModel, FragmentRepoListBinding
         if (!mTwoPane) {
             startActivity(DetailActivity.newIntent(activity!!, repos))
         } else {
-            activity?.supportFragmentManager?.transact { replace(R.id.detail_activity_container, DetailFragment.newInstance(repos)) }
+            activity?.supportFragmentManager?.transact { replace(R.id.detail_container, DetailFragment.newInstance(repos)) }
         }
     }
 }

@@ -25,11 +25,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         savedInstanceState?.let {
             searchString = savedInstanceState.getString(SEARCH_KEY)
-
-            findViewById<FrameLayout>(R.id.detail_activity_container)?.let {
+            findViewById<FrameLayout>(R.id.detail_container)?.let {
                 supportFragmentManager.transact {
-                    replace(R.id.list_container, RepoListFragment.newInstance(searchString))
-                    replace(R.id.detail_activity_container, DetailFragment.newInstance())
+                    replace(R.id.detail_container, RepoListFragment.newInstance(searchString))
+                    replace(R.id.list_container, DetailFragment.newInstance())
                 }
             } ?: supportFragmentManager.transact { replace(R.id.list_container, RepoListFragment.newInstance(searchString)) }
         }
@@ -37,7 +36,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater?.inflate(R.menu.options_menu, menu)
+        menuInflater.inflate(R.menu.options_menu, menu)
 
         val searchItem = menu?.findItem(R.id.search)
 

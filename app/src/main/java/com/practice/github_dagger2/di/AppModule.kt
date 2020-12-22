@@ -1,4 +1,4 @@
-package com.practice.github_dagger2.di.module
+package com.practice.github_dagger2.di
 
 import android.app.Application
 import androidx.room.Room
@@ -17,7 +17,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module(includes = arrayOf(ViewModelModule::class))
+@Module(includes = [ViewModelModule::class])
 class AppModule {
 
     @Provides

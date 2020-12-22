@@ -1,4 +1,4 @@
-package com.practice.github_dagger2.di.module
+package com.practice.github_dagger2.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -24,6 +24,6 @@ abstract class ViewModelModule {
     abstract fun bindsDetailViewModel(detailViewModel: DetailViewModel): ViewModel
 
     @Binds
-    abstract fun bindsViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory
+    abstract fun bindsViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 
 }

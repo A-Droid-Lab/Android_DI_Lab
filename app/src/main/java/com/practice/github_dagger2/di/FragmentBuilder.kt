@@ -1,4 +1,4 @@
-package com.practice.github_dagger2.di.builder
+package com.practice.github_dagger2.di
 
 import com.practice.github_dagger2.ui.detail.DetailFragment
 import com.practice.github_dagger2.ui.main.RepoListFragment
